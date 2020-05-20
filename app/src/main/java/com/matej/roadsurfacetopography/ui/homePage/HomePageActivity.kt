@@ -1,4 +1,4 @@
-package com.matej.roadsurfacetopography.ui
+package com.matej.roadsurfacetopography.ui.homePage
 
 import com.matej.roadsurfacetopography.R
 import com.matej.roadsurfacetopography.ui.base.BaseActivity

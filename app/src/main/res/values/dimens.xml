@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="authImgWidth">100dp</dimen>
+    <dimen name="authImgHeight">100dp</dimen>
+    <dimen name="authImgMarginTop">50dp</dimen>
+    <dimen name="authImgMarginBottom">50dp</dimen>
+
+    <dimen name="authEmailMarginTop">100dp</dimen>
+    <dimen name="authPasswordMarginTop">30dp</dimen>
+    <dimen name="newAccMarginTop">10dp</dimen>
+    <dimen name="buttonTextSize">12sp</dimen>
+    <dimen name="buttonMarginTop">50dp</dimen>
+    <dimen name="bottomNavBarHeight">56dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="authAppTitle">22sp</dimen>
+</resources>
