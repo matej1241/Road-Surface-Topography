@@ -5,17 +5,46 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.matej.roadsurfacetopography.R
+import com.matej.roadsurfacetopography.RoadSurfaceTopography
+import com.matej.roadsurfacetopography.model.UserData
 import com.matej.roadsurfacetopography.ui.base.BaseFragment
+import com.matej.roadsurfacetopography.ui.homePage.HomePageActivity
+import kotlinx.android.synthetic.main.fragment_registration.*
+import org.koin.android.ext.android.inject
 
-class RegistrationFragment : BaseFragment() {
+class RegistrationFragment : BaseFragment(), RegistrationContract.View {
+
+    private val presenter: RegistrationContract.Presenter by inject<RegistrationContract.Presenter>()
+
     override fun getLayoutResourceId(): Int = R.layout.fragment_registration
 
     override fun setupUi() {
+        presenter.setView(this)
     }
 
     override fun setOnClickListeners() {
+        registerButton.setOnClickListener { onRegisterClicked() }
+    }
+
+    private fun onRegisterClicked() {
+        presenter.onRegisterClicked(
+            UserData(
+                regEmail.text.toString(),
+                regUsername.text.toString(),
+                regPassword.text.toString()
+            )
+        )
+    }
+
+    override fun onRegisterSuccessful() {
+        startActivity(HomePageActivity::class.java)
+    }
+
+    override fun onRegisterFailed() {
+        Toast.makeText(RoadSurfaceTopography.instance, "Pogreska", Toast.LENGTH_SHORT).show()
     }
 
     companion object {

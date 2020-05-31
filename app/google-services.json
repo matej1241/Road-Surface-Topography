@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "609774335390",
+    "firebase_url": "https://road-surface-topography.firebaseio.com",
+    "project_id": "road-surface-topography",
+    "storage_bucket": "road-surface-topography.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609774335390:android:4953531eee9a408cfa528f",
+        "android_client_info": {
+          "package_name": "com.matej.roadsurfacetopography"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609774335390-o59rijthgiv35o0uspl7feghk4nvj9lv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3_ObCqlKwMKcAIsuNSwdNh8fS0bBGiB4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609774335390-o59rijthgiv35o0uspl7feghk4nvj9lv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
