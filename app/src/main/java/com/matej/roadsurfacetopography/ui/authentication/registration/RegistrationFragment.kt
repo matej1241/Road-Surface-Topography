@@ -9,7 +9,9 @@ import android.widget.Toast
 
 import com.matej.roadsurfacetopography.R
 import com.matej.roadsurfacetopography.RoadSurfaceTopography
+import com.matej.roadsurfacetopography.common.showFragment
 import com.matej.roadsurfacetopography.model.UserData
+import com.matej.roadsurfacetopography.ui.authentication.login.LoginFragment
 import com.matej.roadsurfacetopography.ui.base.BaseFragment
 import com.matej.roadsurfacetopography.ui.homePage.HomePageActivity
 import kotlinx.android.synthetic.main.fragment_registration.*
@@ -27,6 +29,7 @@ class RegistrationFragment : BaseFragment(), RegistrationContract.View {
 
     override fun setOnClickListeners() {
         registerButton.setOnClickListener { onRegisterClicked() }
+        loginInsteadText.setOnClickListener { onLoginInsteadClicked() }
     }
 
     private fun onRegisterClicked() {
@@ -37,6 +40,10 @@ class RegistrationFragment : BaseFragment(), RegistrationContract.View {
                 regPassword.text.toString()
             )
         )
+    }
+
+    private fun onLoginInsteadClicked() {
+        activity?.showFragment(R.id.authFragmentContainer, LoginFragment.newInstance())
     }
 
     override fun onRegisterSuccessful() {

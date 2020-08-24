@@ -8,4 +8,8 @@
     <string name="log_in_instead">Log in instead</string>
     <string name="username">Username</string>
     <string name="email">Email</string>
+    <string name="botNavBarHomeTitle">Home</string>
+    <string name="botNavBarListTitle">Data list</string>
+    <string name="botNavBarMapTitle">Map</string>
+    <string name="botNavBarProfileTitle">Profile</string>
 </resources>

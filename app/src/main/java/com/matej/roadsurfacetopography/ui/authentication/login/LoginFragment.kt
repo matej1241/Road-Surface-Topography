@@ -10,7 +10,9 @@ import org.koin.android.ext.android.inject
 
 import com.matej.roadsurfacetopography.R
 import com.matej.roadsurfacetopography.RoadSurfaceTopography
+import com.matej.roadsurfacetopography.common.showFragment
 import com.matej.roadsurfacetopography.model.UserData
+import com.matej.roadsurfacetopography.ui.authentication.registration.RegistrationFragment
 import com.matej.roadsurfacetopography.ui.base.BaseFragment
 import com.matej.roadsurfacetopography.ui.homePage.HomePageActivity
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -27,6 +29,7 @@ class LoginFragment : BaseFragment(), LoginContract.View {
 
     override fun setOnClickListeners() {
         loginButton.setOnClickListener { onLoginClicked() }
+        createNewAccountText.setOnClickListener { onCreateAccountClicked() }
     }
 
     private fun onLoginClicked() {
@@ -36,6 +39,10 @@ class LoginFragment : BaseFragment(), LoginContract.View {
                 password = authPassword.text.toString()
             )
         )
+    }
+
+    private fun onCreateAccountClicked() {
+        activity?.showFragment(R.id.authFragmentContainer, RegistrationFragment.newInstance())
     }
 
     override fun onLoginSuccessful() {

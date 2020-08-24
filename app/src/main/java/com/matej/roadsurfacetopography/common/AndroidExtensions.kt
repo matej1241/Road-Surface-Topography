@@ -10,3 +10,5 @@ fun FragmentActivity.showFragment(containerId: Int, fragment: Fragment, shouldAd
         }
     }.replace(containerId, fragment).commitAllowingStateLoss()
 }
+
+
