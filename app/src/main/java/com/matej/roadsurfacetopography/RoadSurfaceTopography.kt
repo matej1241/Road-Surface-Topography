@@ -14,6 +14,7 @@ class RoadSurfaceTopography: Application() {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true)
         startKoin {
             modules(listOf(
+                databaseModule,
                 firebaseModule,
                 presentationModule,
                 repositoryModule,

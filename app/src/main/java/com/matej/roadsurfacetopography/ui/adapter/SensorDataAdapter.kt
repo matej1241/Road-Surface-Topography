@@ -28,6 +28,15 @@ class SensorDataAdapter: RecyclerView.Adapter<SensorDataHolder>() {
         this.sensorData.addAll(data)
         notifyDataSetChanged()
     }
+
+    fun addData(sensorData: SensorData) {
+        this.sensorData.add(sensorData)
+        refreshData()
+    }
+
+    private fun refreshData(){
+        notifyDataSetChanged()
+    }
 }
 
 class SensorDataHolder(itemView: View): RecyclerView.ViewHolder(itemView){
