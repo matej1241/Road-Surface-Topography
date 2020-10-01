@@ -5,5 +5,5 @@ import com.matej.roadsurfacetopography.model.SensorDataDb
 interface SensorDataDbInteractor {
     fun insertSensorData(sensorData: SensorDataDb)
 
-    fun getAllNews(): List<SensorDataDb>
+    fun getAllSensorData(user: String): List<SensorDataDb>
 }

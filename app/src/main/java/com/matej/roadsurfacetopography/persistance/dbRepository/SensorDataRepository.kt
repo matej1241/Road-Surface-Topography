@@ -6,5 +6,5 @@ interface SensorDataRepository {
 
     fun insertSensorData(sensorData: SensorDataDb)
 
-    fun getAllNews(): List<SensorDataDb>
+    fun getAllSensorData(user: String): List<SensorDataDb>
 }

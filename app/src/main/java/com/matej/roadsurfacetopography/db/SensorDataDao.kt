@@ -10,7 +10,7 @@ interface SensorDataDao {
     @Insert
     fun insertSensorData(sensorData: SensorDataDb)
 
-    @Query("SELECT * FROM sensorData ORDER BY id DESC") //dodat WHERE user = :user
-    fun getAllSensorData(): List<SensorDataDb> //dodat (user: String)
+    @Query("SELECT * FROM sensorData WHERE user = :user ORDER BY id DESC ")
+    fun getAllSensorData(user: String): List<SensorDataDb>
 
 }

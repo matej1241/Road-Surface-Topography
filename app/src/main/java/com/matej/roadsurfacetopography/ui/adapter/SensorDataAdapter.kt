@@ -42,7 +42,7 @@ class SensorDataAdapter: RecyclerView.Adapter<SensorDataHolder>() {
 class SensorDataHolder(itemView: View): RecyclerView.ViewHolder(itemView){
     fun bindData(data: SensorData){
         itemView.dataValueText.text = data.value.toString()
-        itemView.locationXValueText.text = data.locationX
-        itemView.locationYValueText.text = data.locationY
+        itemView.locationXValueText.text = data.locationX.toString()
+        itemView.locationYValueText.text = data.locationY.toString()
     }
 }

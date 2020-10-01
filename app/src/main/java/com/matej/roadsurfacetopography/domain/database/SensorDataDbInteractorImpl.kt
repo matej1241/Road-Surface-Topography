@@ -8,6 +8,6 @@ class SensorDataDbInteractorImpl(private val sensorDataRepository: SensorDataRep
         sensorDataRepository.insertSensorData(sensorData)
     }
 
-    override fun getAllNews(): List<SensorDataDb> = sensorDataRepository.getAllNews()
+    override fun getAllSensorData(user: String): List<SensorDataDb> = sensorDataRepository.getAllSensorData(user)
 
 }

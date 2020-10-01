@@ -59,4 +59,10 @@ dependencies {
     //db
     implementation "androidx.room:room-runtime:2.2.0-beta01"
     kapt "android.arch.persistence.room:compiler:2.2.0-beta01"
+
+    //map
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    //location
+    implementation 'com.google.android.gms:play-services-location:17.0.0'
 }

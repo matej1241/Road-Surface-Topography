@@ -8,7 +8,7 @@ import androidx.room.PrimaryKey
 data class SensorDataDb (
     @PrimaryKey(autoGenerate = true) var id: Long = 0,
     @ColumnInfo(name = "user") val user: String = "",
-    @ColumnInfo(name = "sensor_value") val sensorValue: Int,
-    @ColumnInfo(name = "locationX") val locationX: String = "",
-    @ColumnInfo(name = "LocationY") val locationY: String = ""
+    @ColumnInfo(name = "sensor_value") val sensorValue: Double = 0.00,
+    @ColumnInfo(name = "locationX") val locationX: Double = 0.00,
+    @ColumnInfo(name = "LocationY") val locationY: Double = 0.00
 )
