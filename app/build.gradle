@@ -46,13 +46,13 @@ dependencies {
     //firebase
     implementation 'com.google.firebase:firebase-auth:19.3.1'
 
+    //firestore
+    implementation 'com.google.firebase:firebase-firestore-ktx:21.7.0'
+
     //di
     implementation "org.koin:koin-core:2.1.5"
-    // Koin AndroidX Scope features
     implementation "org.koin:koin-android-scope:2.1.5"
-    // Koin AndroidX ViewModel features
     implementation 'org.koin:koin-androidx-viewmodel:2.1.5'
-    // Koin AndroidX Experimental features
     implementation "org.koin:koin-android-ext:2.1.5"
     implementation 'com.google.android.material:material:1.1.0'
 

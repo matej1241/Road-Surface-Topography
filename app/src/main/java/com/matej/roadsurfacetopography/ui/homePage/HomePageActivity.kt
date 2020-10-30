@@ -10,6 +10,7 @@ import com.matej.roadsurfacetopography.R
 import com.matej.roadsurfacetopography.RoadSurfaceTopography
 import com.matej.roadsurfacetopography.common.showFragment
 import com.matej.roadsurfacetopography.ui.base.BaseActivity
+import com.matej.roadsurfacetopography.ui.homePage.dataList.DataListContainerFragment
 import com.matej.roadsurfacetopography.ui.homePage.dataList.DataListFragment
 import com.matej.roadsurfacetopography.ui.homePage.dataMonitor.DataMonitorFragment
 import com.matej.roadsurfacetopography.ui.homePage.map.MapFragment
@@ -27,7 +28,7 @@ class HomePageActivity : BaseActivity() {
                 return@OnNavigationItemSelectedListener true
             }
             R.id.list -> {
-                showFragment(R.id.homeFragmentContainer, DataListFragment.newInstance())
+                showFragment(R.id.homeFragmentContainer, DataListContainerFragment.newInstance())
                 return@OnNavigationItemSelectedListener true
             }
             R.id.map -> {
@@ -72,6 +73,10 @@ class HomePageActivity : BaseActivity() {
                 }
             }
         }
+    }
+
+    fun hideActionBar(){
+        supportActionBar?.hide()
     }
 
     private fun setOnClickListeners() {

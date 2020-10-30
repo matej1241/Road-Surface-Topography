@@ -14,4 +14,63 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
+    <com.google.android.material.chip.ChipGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/chipGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:singleLine="true"
+        app:singleSelection="true">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/localDataChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            app:chipStrokeColor="@color/colorPrimary"
+            app:chipStrokeWidth="0.5dp"
+            app:chipBackgroundColor="@color/chip_bg_states"
+            android:clickable="true"
+            app:checkedIconEnabled="true"
+            android:textColor="@color/colorPrimary"
+            android:text="local data"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/remoteDataChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            app:chipBackgroundColor="@color/chip_bg_states"
+            app:chipStrokeColor="@color/colorPrimary"
+            app:chipStrokeWidth="0.5dp"
+            app:checkedIconEnabled="true"
+            android:textColor="@color/colorPrimary"
+            android:text="remote data"
+            />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/allDataChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            app:chipStrokeColor="@color/colorPrimary"
+            app:chipBackgroundColor="@color/chip_bg_states"
+            app:chipStrokeWidth="0.5dp"
+            android:clickable="true"
+            app:checkedIconEnabled="true"
+            android:textColor="@color/colorPrimary"
+            android:text="all data"
+            />
+    </com.google.android.material.chip.ChipGroup>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

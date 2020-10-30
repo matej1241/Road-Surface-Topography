@@ -10,4 +10,6 @@ class SensorDataDbInteractorImpl(private val sensorDataRepository: SensorDataRep
 
     override fun getAllSensorData(user: String): List<SensorDataDb> = sensorDataRepository.getAllSensorData(user)
 
+    override fun removeSensorData(id: Long) = sensorDataRepository.removeSensorData(id)
+
 }

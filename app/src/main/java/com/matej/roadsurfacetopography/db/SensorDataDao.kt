@@ -13,4 +13,6 @@ interface SensorDataDao {
     @Query("SELECT * FROM sensorData WHERE user = :user ORDER BY id DESC ")
     fun getAllSensorData(user: String): List<SensorDataDb>
 
+    @Query("DELETE FROM sensorData WHERE id = :id")
+    fun removeSensorData(id: Long)
 }

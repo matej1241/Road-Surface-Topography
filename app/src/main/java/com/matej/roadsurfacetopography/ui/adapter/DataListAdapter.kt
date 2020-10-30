@@ -1,5 +1,6 @@
 package com.matej.roadsurfacetopography.ui.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +34,12 @@ class DataListAdapter(
         notifyDataSetChanged()
     }
 
+    fun getCurrentItem(position: Int) = sensorData[position]
+
+    fun removeItem(item: SensorDataDb){
+        this.sensorData.remove(item)
+        notifyDataSetChanged()
+    }
 
 }
 
@@ -42,5 +49,12 @@ class DataListHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         itemView.dataValueText.text = data.sensorValue.toString()
         itemView.locationXValueText.text = data.locationX.toString()
         itemView.locationYValueText.text = data.locationY.toString()
+        when(data.bumpType){
+            1->itemView.dataValueText.setTextColor(Color.rgb(12, 161, 2))
+            2->itemView.dataValueText.setTextColor(Color.rgb(172, 224, 0))
+            3->itemView.dataValueText.setTextColor(Color.rgb(224, 209, 0))
+            4->itemView.dataValueText.setTextColor(Color.rgb(224, 138, 0))
+            5->itemView.dataValueText.setTextColor(Color.rgb(224, 0, 0))
+        }
     }
 }

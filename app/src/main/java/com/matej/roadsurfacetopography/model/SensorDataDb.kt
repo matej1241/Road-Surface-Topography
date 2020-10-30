@@ -10,5 +10,6 @@ data class SensorDataDb (
     @ColumnInfo(name = "user") val user: String = "",
     @ColumnInfo(name = "sensor_value") val sensorValue: Double = 0.00,
     @ColumnInfo(name = "locationX") val locationX: Double = 0.00,
-    @ColumnInfo(name = "LocationY") val locationY: Double = 0.00
+    @ColumnInfo(name = "LocationY") val locationY: Double = 0.00,
+    @ColumnInfo(name = "bump_type") val bumpType: Int = 0
 )
