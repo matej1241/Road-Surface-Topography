@@ -51,7 +51,7 @@ class RegistrationFragment : BaseFragment(), RegistrationContract.View {
     }
 
     override fun onRegisterFailed() {
-        Toast.makeText(RoadSurfaceTopography.instance, "Pogreska", Toast.LENGTH_SHORT).show()
+        Toast.makeText(RoadSurfaceTopography.instance, "Failed to register", Toast.LENGTH_SHORT).show()
     }
 
     companion object {

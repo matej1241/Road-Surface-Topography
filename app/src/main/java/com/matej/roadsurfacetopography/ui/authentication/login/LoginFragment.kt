@@ -50,7 +50,7 @@ class LoginFragment : BaseFragment(), LoginContract.View {
     }
 
     override fun onLoginFailed() {
-        Toast.makeText(RoadSurfaceTopography.instance, "Pogreska", Toast.LENGTH_SHORT).show()
+        Toast.makeText(RoadSurfaceTopography.instance, "Failed to log in", Toast.LENGTH_SHORT).show()
     }
 
     companion object {

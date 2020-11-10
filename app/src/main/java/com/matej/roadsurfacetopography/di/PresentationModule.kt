@@ -15,5 +15,5 @@ val presentationModule = module {
     factory<DataMonitorContract.Presenter> { DataMonitorPresenter(get(), get()) }
     factory<DataListContract.Presenter> { DataListPresenter(get(), get(), get(), get()) }
     factory<DataListFsContract.Presenter> { DataListFsPresenter(get(), get(), get()) }
-    factory<MapContract.Presenter> { MapPresenter(get(), get()) }
+    factory<MapContract.Presenter> { MapPresenter(get(), get(), get()) }
 }

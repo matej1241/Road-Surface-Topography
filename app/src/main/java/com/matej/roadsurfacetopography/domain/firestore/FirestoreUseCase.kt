@@ -10,4 +10,6 @@ interface FirestoreUseCase {
     fun saveData(data: HashMap<String, out Any>, onSaveSuccessful: onSaveSuccessful, onSaveFailed: onSaveFailed)
 
     fun getData(user: String, onGetDataSuccessful: onGetDataSuccessful, onGetDataFailed: onGetDataFailed)
+
+    fun getAllData(onGetDataSuccessful: onGetDataSuccessful, onGetDataFailed: onGetDataFailed)
 }

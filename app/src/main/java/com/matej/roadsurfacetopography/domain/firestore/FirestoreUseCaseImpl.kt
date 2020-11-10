@@ -23,4 +23,11 @@ class FirestoreUseCaseImpl(private val firebaseRepository: FirebaseRepository): 
             .addOnSuccessListener { run { onGetDataSuccessful(it) } }
             .addOnFailureListener { run(onGetDataFailed) }
     }
+
+    override fun getAllData(onGetDataSuccessful: onGetDataSuccessful, onGetDataFailed: onGetDataFailed) {
+        firebaseRepository.getFireStore().collection("sensor_data")
+            .get()
+            .addOnSuccessListener { run { onGetDataSuccessful(it) } }
+            .addOnFailureListener { run(onGetDataFailed) }
+    }
 }
