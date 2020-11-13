@@ -14,6 +14,7 @@ import com.matej.roadsurfacetopography.model.UserData
 import com.matej.roadsurfacetopography.ui.authentication.login.LoginFragment
 import com.matej.roadsurfacetopography.ui.base.BaseFragment
 import com.matej.roadsurfacetopography.ui.homePage.HomePageActivity
+import kotlinx.android.synthetic.main.fragment_login.*
 import kotlinx.android.synthetic.main.fragment_registration.*
 import org.koin.android.ext.android.inject
 
@@ -24,6 +25,7 @@ class RegistrationFragment : BaseFragment(), RegistrationContract.View {
     override fun getLayoutResourceId(): Int = R.layout.fragment_registration
 
     override fun setupUi() {
+        registerProgress.visibility = View.GONE
         presenter.setView(this)
     }
 
@@ -33,6 +35,7 @@ class RegistrationFragment : BaseFragment(), RegistrationContract.View {
     }
 
     private fun onRegisterClicked() {
+        registerProgress.visibility = View.VISIBLE
         presenter.onRegisterClicked(
             UserData(
                 regEmail.text.toString(),
@@ -47,10 +50,12 @@ class RegistrationFragment : BaseFragment(), RegistrationContract.View {
     }
 
     override fun onRegisterSuccessful() {
+        registerProgress.visibility = View.GONE
         startActivity(HomePageActivity::class.java)
     }
 
     override fun onRegisterFailed() {
+        registerProgress.visibility = View.GONE
         Toast.makeText(RoadSurfaceTopography.instance, "Failed to register", Toast.LENGTH_SHORT).show()
     }
 

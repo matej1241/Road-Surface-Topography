@@ -19,12 +19,16 @@ import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : BaseFragment(), LoginContract.View {
 
-    private val presenter: LoginContract.Presenter by inject<LoginContract.Presenter>()
+    private val presenter: LoginContract.Presenter by inject()
 
     override fun getLayoutResourceId(): Int = R.layout.fragment_login
 
     override fun setupUi() {
+        loginProgress.visibility = View.GONE
         presenter.setView(this)
+        if(presenter.getCurrentUser() != "null"){
+            startActivity(HomePageActivity::class.java)
+        }
     }
 
     override fun setOnClickListeners() {
@@ -33,6 +37,7 @@ class LoginFragment : BaseFragment(), LoginContract.View {
     }
 
     private fun onLoginClicked() {
+        loginProgress.visibility = View.VISIBLE
         presenter.onLoginClicked(
             UserData(
                 email = authEmail.text.toString(),
@@ -46,10 +51,12 @@ class LoginFragment : BaseFragment(), LoginContract.View {
     }
 
     override fun onLoginSuccessful() {
+        loginProgress.visibility = View.GONE
         startActivity(HomePageActivity::class.java)
     }
 
     override fun onLoginFailed() {
+        loginProgress.visibility = View.GONE
         Toast.makeText(RoadSurfaceTopography.instance, "Failed to log in", Toast.LENGTH_SHORT).show()
     }
 

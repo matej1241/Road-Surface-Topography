@@ -13,3 +13,4 @@ typealias onSaveSuccessful = () -> Unit
 typealias onSaveFailed = () -> Unit
 typealias onGetDataSuccessful = (data: QuerySnapshot) -> Unit
 typealias onGetDataFailed = () -> Unit
+typealias LogoutSuccess = () -> Unit

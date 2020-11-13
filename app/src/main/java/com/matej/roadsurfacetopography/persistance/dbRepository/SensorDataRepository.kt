@@ -9,4 +9,6 @@ interface SensorDataRepository {
     fun getAllSensorData(user: String): List<SensorDataDb>
 
     fun removeSensorData(id: Long)
+
+    fun removeAllSensorData()
 }

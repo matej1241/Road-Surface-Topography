@@ -29,6 +29,8 @@ class DataListPresenter(
 
     override fun removeSensorData(id: Long) = sensorDataDbInteractor.removeSensorData(id)
 
+    override fun removeAllSensorData() = sensorDataDbInteractor.removeAllSensorData()
+
     override fun saveSensorData(data: SensorDataDb) {
         firestoreUseCase.saveData(hashMapOf(
                 "id" to data.id,

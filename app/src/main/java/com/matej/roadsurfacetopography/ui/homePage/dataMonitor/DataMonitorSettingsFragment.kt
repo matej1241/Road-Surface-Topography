@@ -17,18 +17,18 @@ class DataMonitorSettingsFragment : BaseFragment() {
 
     override fun setupUi() {
         when(DataMonitorFragment.locationUpdateFrequency){
-            1000 -> radioButton1.isChecked = true
-            1250 -> radioButton2.isChecked = true
-            1500 -> radioButton3.isChecked = true
-            1750 -> radioButton4.isChecked = true
+            250 -> radioButton1.isChecked = true
+            500 -> radioButton2.isChecked = true
+            750 -> radioButton3.isChecked = true
+            1000 -> radioButton4.isChecked = true
         }
     }
 
     override fun setOnClickListeners() {
-        radioButton1.setOnClickListener { onRadioButtonClicked(1000) }
-        radioButton2.setOnClickListener { onRadioButtonClicked(1250) }
-        radioButton3.setOnClickListener { onRadioButtonClicked(1500) }
-        radioButton4.setOnClickListener { onRadioButtonClicked(1750) }
+        radioButton1.setOnClickListener { onRadioButtonClicked(250) }
+        radioButton2.setOnClickListener { onRadioButtonClicked(500) }
+        radioButton3.setOnClickListener { onRadioButtonClicked(750) }
+        radioButton4.setOnClickListener { onRadioButtonClicked(1000) }
     }
 
     private fun onRadioButtonClicked(frequency: Int){

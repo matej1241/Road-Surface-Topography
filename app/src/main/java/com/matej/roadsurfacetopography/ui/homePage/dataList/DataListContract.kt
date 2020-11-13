@@ -20,5 +20,6 @@ interface DataListContract {
         fun saveSensorData(data: SensorDataDb)
         fun setOnSwipeToDeleteListener(onSwipeToDelete: onSwipeToDelete): ItemTouchHelper.SimpleCallback
         fun setOnSwipeToSaveListener(onSwipeToSave: onSwipeToSave): ItemTouchHelper.SimpleCallback
+        fun removeAllSensorData()
     }
 }

@@ -15,4 +15,7 @@ interface SensorDataDao {
 
     @Query("DELETE FROM sensorData WHERE id = :id")
     fun removeSensorData(id: Long)
+
+    @Query("DELETE FROM sensorData")
+    fun removeAllSensorData()
 }

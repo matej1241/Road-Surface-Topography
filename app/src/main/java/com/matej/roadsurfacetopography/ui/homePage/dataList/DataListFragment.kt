@@ -1,6 +1,9 @@
 package com.matej.roadsurfacetopography.ui.homePage.dataList
 
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -17,6 +20,7 @@ import com.matej.roadsurfacetopography.persistance.fragmentDataRepository.Fragme
 import com.matej.roadsurfacetopography.ui.adapter.DataListAdapter
 import com.matej.roadsurfacetopography.ui.base.BaseFragment
 import com.matej.roadsurfacetopography.ui.homePage.HomePageActivity
+import com.matej.roadsurfacetopography.ui.homePage.dataMonitor.DataMonitorSettingsFragment
 import com.matej.roadsurfacetopography.ui.homePage.map.MapFragment
 import kotlinx.android.synthetic.main.fragment_data_list.*
 import org.koin.android.ext.android.inject
@@ -33,6 +37,7 @@ class DataListFragment : BaseFragment(), DataListContract.View {
     override fun setupUi() {
         presenter.setView(this)
         setRecyclerView()
+        Log.d("size", presenter.getSensorData().size.toString())
         adapter.setData(presenter.getSensorData())
     }
 

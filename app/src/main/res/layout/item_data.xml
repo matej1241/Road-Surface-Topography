@@ -44,7 +44,7 @@
         android:layout_margin="10dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:text="Location:"
+        android:text="Longitude:"
         />
 
     <TextView
@@ -67,7 +67,7 @@
         android:layout_margin="10dp"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
-        android:text="Location:"
+        android:text="Latitude:"
         />
 
     <TextView

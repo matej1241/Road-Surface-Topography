@@ -41,6 +41,11 @@ class DataListAdapter(
         notifyDataSetChanged()
     }
 
+    fun removeAllData(){
+        this.sensorData.clear()
+        notifyDataSetChanged()
+    }
+
 }
 
 class DataListHolder(itemView: View): RecyclerView.ViewHolder(itemView){

@@ -105,22 +105,23 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, MapContract.View {
     }
 
     private fun showLocations(map: GoogleMap, locations: List<SensorDataDb>) {
-        setCamera(map, Pair(locations[0].locationX, locations[0].locationY))
+        if(locations.isEmpty()) return
+        setCamera(map, Pair(locations.last().locationX, locations.last().locationY))
         for (location in locations){
             when(location.bumpType){
-                SMALL_BUMP -> addMarker(map, R.drawable.ic_small_bump_marker, location.locationX, location.locationY)
-                MEDIUM_SMALL_BUMP -> addMarker(map, R.drawable.ic_medium_small_bump_marker, location.locationX, location.locationY)
-                MEDIUM_BUMP -> addMarker(map, R.drawable.ic_medium_bump_marker, location.locationX, location.locationY)
-                MEDIUM_BIG_BUMP -> addMarker(map, R.drawable.ic_medium_big_bump_marker, location.locationX, location.locationY)
-                BIG_BUMP -> addMarker(map, R.drawable.ic_big_bump_marker, location.locationX, location.locationY)
+                SMALL_BUMP -> addMarker(map, R.drawable.ic_small_bump_marker, location.locationX, location.locationY, location.sensorValue)
+                MEDIUM_SMALL_BUMP -> addMarker(map, R.drawable.ic_medium_small_bump_marker, location.locationX, location.locationY, location.sensorValue)
+                MEDIUM_BUMP -> addMarker(map, R.drawable.ic_medium_bump_marker, location.locationX, location.locationY, location.sensorValue)
+                MEDIUM_BIG_BUMP -> addMarker(map, R.drawable.ic_medium_big_bump_marker, location.locationX, location.locationY, location.sensorValue)
+                BIG_BUMP -> addMarker(map, R.drawable.ic_big_bump_marker, location.locationX, location.locationY, location.sensorValue)
             }
         }
     }
 
-    private fun addMarker(map: GoogleMap, markerIcon: Int, latitude: Double, longitude: Double){
+    private fun addMarker(map: GoogleMap, markerIcon: Int, latitude: Double, longitude: Double, sensorValue: Double){
         map.addMarker(MarkerOptions()
             .icon(BitmapDescriptorFactory.fromResource(markerIcon))
-            .position(LatLng(latitude, longitude)).title("marker"))
+            .position(LatLng(latitude, longitude)).title("Sensor value ${sensorValue.toString()}"))
     }
 
     override fun onResume() {

@@ -10,4 +10,6 @@ class SensorDataRepositoryImpl(private val sensorDataDao: SensorDataDao): Sensor
     override fun getAllSensorData(user: String): List<SensorDataDb> = sensorDataDao.getAllSensorData(user)
 
     override fun removeSensorData(id: Long) = sensorDataDao.removeSensorData(id)
+
+    override fun removeAllSensorData() = sensorDataDao.removeAllSensorData()
 }
