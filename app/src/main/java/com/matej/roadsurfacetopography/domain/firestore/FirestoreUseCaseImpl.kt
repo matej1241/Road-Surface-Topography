@@ -30,4 +30,11 @@ class FirestoreUseCaseImpl(private val firebaseRepository: FirebaseRepository): 
             .addOnSuccessListener { run { onGetDataSuccessful(it) } }
             .addOnFailureListener { run(onGetDataFailed) }
     }
+
+    override fun deleteData(dataId: String) {
+        firebaseRepository.getFireStore().collection("sensor_data")
+            .document(dataId)
+            .delete()
+    }
+
 }

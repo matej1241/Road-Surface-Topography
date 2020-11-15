@@ -2,6 +2,8 @@ package com.matej.roadsurfacetopography.ui.homePage.map
 
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
+import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -98,9 +100,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, MapContract.View {
     }
 
     private fun onLocationClicked(map: GoogleMap){
-        val location = repository.getSelectedLocation()
-        setCamera(map, location)
-        map.addMarker(MarkerOptions().position(LatLng(location.first, location.second)).title("marker"))
+        val location = mutableListOf<SensorDataDb>(repository.getSelectedData())
+        showLocations(map, location)
         isDataClicked = false
     }
 
@@ -152,7 +153,10 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, MapContract.View {
     override fun onLowMemory() {
         super.onLowMemory()
         mapView?.onLowMemory()
+
     }
+
+
 
     override fun onGetDataSuccessful(data: List<SensorDataDb>) {
         remoteData = data
@@ -169,6 +173,8 @@ class MapFragment : BaseFragment(), OnMapReadyCallback, MapContract.View {
     override fun onGetAllDataFailed() {
         Log.d("+++", "Failed to get remote data")
     }
+
+
 
     companion object {
 

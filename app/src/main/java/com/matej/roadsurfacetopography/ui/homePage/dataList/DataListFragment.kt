@@ -22,6 +22,7 @@ import com.matej.roadsurfacetopography.ui.base.BaseFragment
 import com.matej.roadsurfacetopography.ui.homePage.HomePageActivity
 import com.matej.roadsurfacetopography.ui.homePage.dataMonitor.DataMonitorSettingsFragment
 import com.matej.roadsurfacetopography.ui.homePage.map.MapFragment
+import kotlinx.android.synthetic.main.activity_homepage.*
 import kotlinx.android.synthetic.main.fragment_data_list.*
 import org.koin.android.ext.android.inject
 
@@ -52,9 +53,9 @@ class DataListFragment : BaseFragment(), DataListContract.View {
     }
 
     private fun onLocationClicked(data: SensorDataDb){
-        repository.onLocationSelected(data.locationX, data.locationY)
+        repository.onLocationSelected(data)
         MapFragment.isDataClicked = true
-        activity?.showFragment(R.id.homeFragmentContainer, MapFragment.newInstance())
+        activity?.showFragment(R.id.homeFragmentContainer, MapFragment.newInstance(), true)
     }
 
     private fun swipeToDeleteListener() {

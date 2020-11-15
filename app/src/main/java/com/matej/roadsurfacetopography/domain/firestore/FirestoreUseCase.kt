@@ -12,4 +12,6 @@ interface FirestoreUseCase {
     fun getData(user: String, onGetDataSuccessful: onGetDataSuccessful, onGetDataFailed: onGetDataFailed)
 
     fun getAllData(onGetDataSuccessful: onGetDataSuccessful, onGetDataFailed: onGetDataFailed)
+
+    fun deleteData(dataId: String)
 }

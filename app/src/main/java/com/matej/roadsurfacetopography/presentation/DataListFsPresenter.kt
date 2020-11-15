@@ -1,7 +1,10 @@
 package com.matej.roadsurfacetopography.presentation
 
 
+import android.util.Log
+import androidx.recyclerview.widget.ItemTouchHelper
 import com.google.firebase.firestore.QuerySnapshot
+import com.matej.roadsurfacetopography.common.onSwipeToDelete
 import com.matej.roadsurfacetopography.domain.firebase.CurrentUserUseCase
 import com.matej.roadsurfacetopography.domain.firestore.FirestoreUseCase
 import com.matej.roadsurfacetopography.model.SensorDataDb
@@ -26,10 +29,10 @@ class DataListFsPresenter(
         firestoreUseCase.getData(getCurrentUser(), ::onGetDataSuccessful, ::onGetDataFailed)
     }
 
-    override fun removeFirestoreSensorData(id: Long) {
-    }
+    override fun removeFirestoreSensorData(id: String) = firestoreUseCase.deleteData(id)
 
-    //override fun setOnSwipeToDeleteListener(onSwipeToDelete: onSwipeToDelete): ItemTouchHelper.SimpleCallback {}
+    override fun setOnSwipeToDeleteListener(onSwipeToDelete: onSwipeToDelete): ItemTouchHelper.SimpleCallback
+            = listenerRepository.setOnSwipeToDeleteListener(onSwipeToDelete)
 
     private fun onGetDataSuccessful(data: QuerySnapshot) {
         val dataList = mutableListOf<SensorDataDb>()
@@ -41,7 +44,8 @@ class DataListFsPresenter(
                     locationY = document.data.getValue("longitude").toString().toDouble(),
                     sensorValue = document.data.getValue("sensorValue").toString().toDouble(),
                     user = document.data.getValue("user").toString(),
-                    bumpType = document.data.getValue("bump_type").toString().toInt()
+                    bumpType = document.data.getValue("bump_type").toString().toInt(),
+                    fsId = document.id
             ))
         }
         view.onGetDataSuccessful(dataList)

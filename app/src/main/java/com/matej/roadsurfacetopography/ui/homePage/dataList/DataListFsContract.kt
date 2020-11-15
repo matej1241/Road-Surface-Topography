@@ -16,7 +16,7 @@ interface DataListFsContract {
         fun setView(view: View)
         fun getCurrentUser(): String
         fun getSensorData()
-        fun removeFirestoreSensorData(id: Long)
-        //fun setOnSwipeToDeleteListener(onSwipeToDelete: onSwipeToDelete): ItemTouchHelper.SimpleCallback
+        fun removeFirestoreSensorData(id: String)
+        fun setOnSwipeToDeleteListener(onSwipeToDelete: onSwipeToDelete): ItemTouchHelper.SimpleCallback
     }
 }
